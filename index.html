@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BTC High-Risk Bake-off · 20x</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#151a23; --panel2:#1b2230; --line:#252d3d;
+    --txt:#e6eaf2; --muted:#8a93a6; --green:#28c76f; --red:#ff5c5c; --accent:#4c8dff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px;max-width:1100px;margin:0 auto}
+  header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  h1{font-size:18px;margin:0;font-weight:650;letter-spacing:.3px}
+  h1 .lev{color:var(--accent);font-weight:700}
+  .updated{font-size:12px;color:var(--muted)}
+  .note{font-size:12px;color:var(--muted);margin:0 0 16px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:16px}
+  .panel h2{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:0 0 10px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+  .rank{color:var(--muted);width:26px}
+  .green{color:var(--green)} .red{color:var(--red)}
+  .pill{padding:2px 7px;border-radius:6px;font-size:11px;font-weight:700}
+  .pill.long{background:rgba(40,199,111,.15);color:var(--green)}
+  .pill.short{background:rgba(255,92,92,.15);color:var(--red)}
+  .tag{font-size:11px;font-weight:700;padding:2px 6px;border-radius:5px}
+  .tag.OPEN{background:rgba(76,141,255,.15);color:var(--accent)}
+  .tag.CLOSE{background:rgba(138,147,166,.18);color:var(--muted)}
+  .tag.LIQ{background:rgba(255,92,92,.2);color:var(--red)}
+  .badge{font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;white-space:nowrap}
+  .badge.READY{background:rgba(40,199,111,.18);color:var(--green)}
+  .badge.PROMISING{background:rgba(230,200,76,.16);color:#e6c84c}
+  .badge.INCUBATING{background:rgba(76,141,255,.15);color:var(--accent)}
+  .badge.FAILING{background:rgba(255,92,92,.16);color:var(--red)}
+  .empty{color:var(--muted);font-size:13px;padding:10px 4px}
+  .wrap{overflow-x:auto}
+  canvas{max-height:300px}
+  details{border:1px solid var(--line);border-radius:10px;margin-bottom:10px;background:var(--panel2)}
+  summary{cursor:pointer;padding:12px 14px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  summary::-webkit-details-marker{display:none}
+  .sname{font-weight:650;font-size:14px}
+  .sstat{font-size:12px;color:var(--muted)}
+  .sbig{font-size:15px;font-weight:700}
+  details .body{padding:0 14px 14px}
+  .legend{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px;font-size:12px}
+  .legend span{display:flex;align-items:center;gap:5px;color:var(--muted)}
+  .dot{width:10px;height:10px;border-radius:3px;display:inline-block}
+  footer{color:var(--muted);font-size:11px;text-align:center;margin-top:8px;line-height:1.5}
+</style>
+</head>
+<body>
+<header>
+  <h1>🔥 BTC High-Risk Bake-off <span class="lev" id="levTag"></span></h1>
+  <div class="updated" id="updated">loading…</div>
+</header>
+<p class="note" id="subnote"></p>
+
+<div class="panel">
+  <h2>Equity curves — each strategy, its own $ book</h2>
+  <div class="legend" id="legend"></div>
+  <canvas id="equityChart"></canvas>
+</div>
+
+<div class="panel">
+  <h2>Leaderboard</h2>
+  <div class="wrap"><table id="leaderTable"></table></div>
+</div>
+
+<div class="panel">
+  <h2>Per-strategy detail</h2>
+  <div id="details"></div>
+</div>
+
+<footer>
+  Paper money · real Hyperliquid BTC prices (USD) · 4 high-risk strategies · $2 each · 20x leverage.<br>
+  Deliberately high-variance: at 20x a ~5% move liquidates, so expect 💥 often. This is an aggressive experiment, NOT a proven edge or financial advice. Auto-refreshes every 60s.
+</footer>
+
+<script>
+const PALETTE = ["#4c8dff","#28c76f","#ff9f43","#a66bff","#ff5c5c","#25d0d0","#e6c84c",
+  "#ff6fb5","#7ee787","#f0883e","#6cb6ff","#d2a8ff","#ffab70","#39d353","#db61a2",
+  "#58a6ff","#f778ba","#3fb950","#e3b341","#a5d6ff"];
+const fmt = n => "$" + Number(n).toLocaleString("en-US",{maximumFractionDigits:2});
+const pct = n => (n>=0?"+":"") + Number(n).toFixed(2) + "%";
+const cls = n => n>=0 ? "green" : "red";
+const symf = s => s.replace("USDT","");
+let chart;
+
+async function load(){
+  try{
+    const r = await fetch("./state.json?t=" + Date.now(), {cache:"no-store"});
+    render(await r.json());
+  }catch(e){ document.getElementById("updated").textContent = "failed to load state.json"; }
+}
+
+function render(s){
+  const strats = s.strategies || [];
+  document.getElementById("levTag").textContent = s.leverage ? `· ${s.leverage}x` : "";
+  const d = new Date(s.updatedAt);
+  document.getElementById("updated").textContent = "Updated " + d.toLocaleString("en-IN",{timeZone:"Asia/Kolkata"});
+  const promo = s.promotion || {};
+  document.getElementById("subnote").innerHTML =
+    `${strats.length} strategies · ${fmt(s.startingCash)} each · ${s.marginPerTrade?fmt(s.marginPerTrade)+"/trade base":""} · ${(s.symbols||[]).join(" ")}` +
+    `<br><b>Promotion bar (→ real money):</b> ✅ ready needs ${promo.minClosedTrades||30}+ closed trades, ${promo.minDays||7}+ days, profit-factor ≥ ${promo.minProfitFactor||1.15}, Sharpe ≥ ${promo.minSharpe||1}, max drawdown ≤ ${promo.maxDrawdownPct||25}%. ${s.learning&&s.learning.enabled?"Alloc = adaptive bet-size (learning).":""}`;
+
+  // ---- equity chart: one line per strategy, aligned on a shared time axis ----
+  const stamps = new Set();
+  strats.forEach(st => (st.equityHistory||[]).forEach(p => stamps.add(p.t)));
+  const times = [...stamps].sort();
+  const labels = times.map(t => new Date(t).toLocaleTimeString("en-IN",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit"}));
+  const datasets = strats.map((st,i) => {
+    const map = Object.fromEntries((st.equityHistory||[]).map(p=>[p.t,p.equity]));
+    let last = s.startingCash;
+    const data = times.map(t => { if(map[t]!==undefined) last = map[t]; return last; });
+    const col = PALETTE[i % PALETTE.length];
+    return { label: st.name, data, borderColor: col, backgroundColor: "transparent", tension:.25, pointRadius:0, borderWidth:2 };
+  });
+  document.getElementById("legend").innerHTML = strats.map((st,i)=>
+    `<span><i class="dot" style="background:${PALETTE[i%PALETTE.length]}"></i>${st.name}</span>`).join("");
+  const ctx = document.getElementById("equityChart");
+  if(chart) chart.destroy();
+  chart = new Chart(ctx,{
+    type:"line",
+    data:{labels,datasets},
+    options:{
+      plugins:{legend:{display:false}},
+      interaction:{mode:"index",intersect:false},
+      scales:{
+        x:{grid:{color:"#252d3d"},ticks:{color:"#8a93a6",maxTicksLimit:8}},
+        y:{grid:{color:"#252d3d"},ticks:{color:"#8a93a6",callback:v=>"$"+v}}
+      }
+    }
+  });
+
+  // ---- leaderboard ----
+  const BADGE = {READY:"✅ ready",PROMISING:"🟡 promising",INCUBATING:"⏳ incubating",FAILING:"❌ failing"};
+  const num = (v,d=2,suf="")=> v==null ? "—" : Number(v).toFixed(d)+suf;
+  const lt = document.getElementById("leaderTable");
+  lt.innerHTML = `<tr><th>#</th><th>Strategy</th><th>Status</th><th>Equity</th><th>P&L</th><th>Sharpe</th><th>Max DD</th><th>PF</th><th>Win%</th><th>Cl.Tr</th><th>Alloc</th></tr>` +
+    strats.map((st,i)=>{const m=st.metrics||{};return `<tr>
+      <td class="rank">${["🥇","🥈","🥉"][i]||(i+1)}</td>
+      <td>${st.name}</td>
+      <td><span class="badge ${st.status}">${BADGE[st.status]||st.status||"—"}</span></td>
+      <td>${fmt(st.equity)}</td>
+      <td class="${cls(st.pnl)}">${fmt(st.pnl)} (${pct(st.pnlPct)})</td>
+      <td class="${m.sharpe==null?"":cls(m.sharpe)}">${num(m.sharpe,1)}</td>
+      <td class="red">${num(m.maxDrawdownPct,0,"%")}</td>
+      <td>${num(m.profitFactor,2)}</td>
+      <td>${num(st.winRate,0,"%")}</td>
+      <td>${m.closedTrades==null?"—":m.closedTrades}</td>
+      <td>${st.riskMult==null?"—":st.riskMult.toFixed(2)+"×"}</td>
+    </tr>`;}).join("");
+
+  // ---- per-strategy detail (collapsible) ----
+  document.getElementById("details").innerHTML = strats.map((st,i)=>{
+    const pos = (st.positions||[]).length ?
+      `<div class="wrap"><table>
+        <tr><th>Coin</th><th>Side</th><th>Entry</th><th>Mark</th><th>uPnL</th><th>ROI</th><th>Liq</th></tr>` +
+        st.positions.map(p=>`<tr>
+          <td>${symf(p.symbol)}</td>
+          <td><span class="pill ${p.side}">${p.side.toUpperCase()} ${p.leverage}x</span></td>
+          <td>${fmt(p.entry)}</td><td>${fmt(p.mark)}</td>
+          <td class="${cls(p.uPnl)}">${fmt(p.uPnl)}</td>
+          <td class="${cls(p.roi)}">${pct(p.roi)}</td>
+          <td>${fmt(p.liq)}</td></tr>`).join("") + `</table></div>`
+      : `<div class="empty">No open positions.</div>`;
+    const tr = (st.trades||[]).length ?
+      `<div class="wrap"><table>
+        <tr><th>Time</th><th>Action</th><th>Coin</th><th>Side</th><th>Price</th><th>P&L</th></tr>` +
+        st.trades.slice().reverse().map(t=>{
+          const tg = t.reason==="liquidation" ? "LIQ" : t.action;
+          const price = t.action==="OPEN" ? t.price : t.exit;
+          const pnl = t.action==="CLOSE" ? `<span class="${cls(t.pnl)}">${fmt(t.pnl)} (${pct(t.roi)})</span>` : "—";
+          return `<tr>
+            <td>${new Date(t.ts).toLocaleTimeString("en-IN",{timeZone:"Asia/Kolkata",hour:"2-digit",minute:"2-digit"})}</td>
+            <td><span class="tag ${tg}">${tg==="LIQ"?"💥 LIQ":t.action}</span></td>
+            <td>${symf(t.symbol)}</td>
+            <td>${(t.side||"").toUpperCase()}</td>
+            <td>${fmt(price)}</td>
+            <td>${pnl}</td></tr>`;
+        }).join("") + `</table></div>`
+      : `<div class="empty">No trades yet.</div>`;
+    return `<details ${i===0?"open":""}>
+      <summary>
+        <span><i class="dot" style="background:${PALETTE[i%PALETTE.length]}"></i>
+          <span class="sname">${["🥇","🥈","🥉"][i]||""} ${st.name}</span></span>
+        <span class="sstat"><span class="sbig ${cls(st.pnl)}">${fmt(st.equity)}</span> · ${pct(st.pnlPct)} · ${st.openCount} open</span>
+      </summary>
+      <div class="body">
+        <div class="sstat" style="margin:2px 0 6px">
+          <span class="badge ${st.status}">${BADGE[st.status]||st.status}</span>
+          &nbsp;Sharpe ${num((st.metrics||{}).sharpe,2)} · Sortino ${num((st.metrics||{}).sortino,2)} · MaxDD ${num((st.metrics||{}).maxDrawdownPct,0,"%")} · PF ${num((st.metrics||{}).profitFactor,2)} · expectancy ${(st.metrics||{}).expectancy==null?"—":fmt((st.metrics||{}).expectancy)}/trade
+        </div>
+        <div class="sstat" style="margin:0 0 10px">Free cash ${fmt(st.cash)} · realized ${fmt(st.realizedPnL)} · ${st.closedTrades||0} closed · alloc ${st.riskMult==null?"—":st.riskMult.toFixed(2)+"×"} · ${((st.metrics||{}).days||0).toFixed(1)}d live</div>
+        ${pos}<div style="height:10px"></div>${tr}
+      </div>
+    </details>`;
+  }).join("");
+}
+
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
