@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T14:00:03.588Z",
+  "updatedAt": "2026-08-14T14:10:02.253Z",
   "startingCash": 2,
   "deathEquity": 0.2,
   "symbols": [
@@ -37,7 +37,7 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.002218402777777778
+        "days": 0.009150810185185185
       },
       "status": "INCUBATING",
       "closedTrades": 0,
@@ -58,52 +58,25 @@
         {
           "t": "2026-08-14T14:00:02.448Z",
           "equity": 2
-        }
-      ],
-      "lineage": []
-    },
-    {
-      "id": "volatility-breakout",
-      "name": "Volatility Breakout g1",
-      "gen": 1,
-      "equity": 2,
-      "pnl": 0,
-      "pnlPct": 0,
-      "cash": 2,
-      "realizedPnL": 0,
-      "fundingPaid": 0,
-      "deaths": 0,
-      "openCount": 0,
-      "tradeCount": 0,
-      "metrics": {
-        "closedTrades": 0,
-        "winRate": null,
-        "expectancy": null,
-        "profitFactor": null,
-        "totalReturnPct": 0,
-        "maxDrawdownPct": 0,
-        "sharpe": null,
-        "sortino": null,
-        "days": 0.002218402777777778
-      },
-      "status": "INCUBATING",
-      "closedTrades": 0,
-      "winRate": null,
-      "leverage": 20,
-      "stopLossPct": null,
-      "positions": [],
-      "trades": [],
-      "equityHistory": [
+        },
         {
-          "t": "2026-08-14T13:56:50.778Z",
+          "t": "2026-08-14T14:02:01.740Z",
           "equity": 2
         },
         {
-          "t": "2026-08-14T13:58:03.512Z",
+          "t": "2026-08-14T14:04:01.947Z",
           "equity": 2
         },
         {
-          "t": "2026-08-14T14:00:02.448Z",
+          "t": "2026-08-14T14:06:01.649Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:08:01.778Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:10:01.408Z",
           "equity": 2
         }
       ],
@@ -113,12 +86,12 @@
       "id": "turbo-ema-scalp",
       "name": "Turbo EMA Scalp g1",
       "gen": 1,
-      "equity": 1.975316126686398,
-      "pnl": -0.02468387331360189,
-      "pnlPct": -1.2341936656800945,
-      "cash": 0.9900133166475784,
+      "equity": 1.9951669949522763,
+      "pnl": -0.00483300504772366,
+      "pnlPct": -0.24165025238618298,
+      "cash": 0.9900549288788222,
       "realizedPnL": 0,
-      "fundingPaid": -0.000013316647578513702,
+      "fundingPaid": -0.000054928878822290026,
       "deaths": 0,
       "openCount": 1,
       "tradeCount": 1,
@@ -127,11 +100,11 @@
         "winRate": null,
         "expectancy": null,
         "profitFactor": null,
-        "totalReturnPct": -1.2341936656800945,
-        "maxDrawdownPct": 0.7378830810855217,
-        "sharpe": null,
-        "sortino": null,
-        "days": 0.002218402777777778
+        "totalReturnPct": -0.24165025238618298,
+        "maxDrawdownPct": 1.0256275300225441,
+        "sharpe": 12.287772836764738,
+        "sortino": 25.789917735295887,
+        "days": 0.009150810185185185
       },
       "status": "INCUBATING",
       "closedTrades": 0,
@@ -144,9 +117,9 @@
           "side": "short",
           "leverage": 20,
           "entry": 62597,
-          "mark": 62643,
-          "uPnl": -0.014697189961180248,
-          "roi": -1.4697189961180248,
+          "mark": 62581,
+          "uPnl": 0.005112066073453999,
+          "roi": 0.5112066073453999,
           "liq": 65413.865
         }
       ],
@@ -175,6 +148,116 @@
         {
           "t": "2026-08-14T14:00:02.448Z",
           "equity": 1.975316126686398
+        },
+        {
+          "t": "2026-08-14T14:02:01.740Z",
+          "equity": 1.9852290408555011
+        },
+        {
+          "t": "2026-08-14T14:04:01.947Z",
+          "equity": 1.978527806643255
+        },
+        {
+          "t": "2026-08-14T14:06:01.649Z",
+          "equity": 1.9695900121525514
+        },
+        {
+          "t": "2026-08-14T14:08:01.778Z",
+          "equity": 1.97662745089255
+        },
+        {
+          "t": "2026-08-14T14:10:01.408Z",
+          "equity": 1.9951669949522763
+        }
+      ],
+      "lineage": []
+    },
+    {
+      "id": "volatility-breakout",
+      "name": "Volatility Breakout g1",
+      "gen": 1,
+      "equity": 1.99,
+      "pnl": -0.010000000000000009,
+      "pnlPct": -0.5000000000000004,
+      "cash": 0.99,
+      "realizedPnL": 0,
+      "fundingPaid": 0,
+      "deaths": 0,
+      "openCount": 1,
+      "tradeCount": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": -0.5000000000000004,
+        "maxDrawdownPct": 0.5000000000000004,
+        "sharpe": -70.75107268242854,
+        "sortino": null,
+        "days": 0.009150810185185185
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "leverage": 20,
+      "stopLossPct": null,
+      "positions": [
+        {
+          "symbol": "BTC",
+          "side": "short",
+          "leverage": 20,
+          "entry": 62581,
+          "mark": 62581,
+          "uPnl": 0,
+          "roi": 0,
+          "liq": 65397.145
+        }
+      ],
+      "trades": [
+        {
+          "ts": "2026-08-14T14:10:01.395Z",
+          "action": "OPEN",
+          "side": "short",
+          "symbol": "BTC",
+          "price": 62581,
+          "margin": 1,
+          "notional": 20,
+          "fee": 0.01,
+          "coinQty": 0.00031958581678145123
+        }
+      ],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:56:50.778Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T13:58:03.512Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:00:02.448Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:02:01.740Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:04:01.947Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:06:01.649Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:08:01.778Z",
+          "equity": 2
+        },
+        {
+          "t": "2026-08-14T14:10:01.408Z",
+          "equity": 1.99
         }
       ],
       "lineage": []
@@ -199,9 +282,9 @@
         "profitFactor": 0,
         "totalReturnPct": -1.734560914904404,
         "maxDrawdownPct": 1.2407647385973906,
-        "sharpe": null,
-        "sortino": null,
-        "days": 0.002218402777777778
+        "sharpe": -72.91031475401294,
+        "sortino": -39.86446137958583,
+        "days": 0.009150810185185185
       },
       "status": "FAILING",
       "closedTrades": 1,
@@ -244,6 +327,26 @@
         },
         {
           "t": "2026-08-14T14:00:02.448Z",
+          "equity": 1.965308781701912
+        },
+        {
+          "t": "2026-08-14T14:02:01.740Z",
+          "equity": 1.965308781701912
+        },
+        {
+          "t": "2026-08-14T14:04:01.947Z",
+          "equity": 1.965308781701912
+        },
+        {
+          "t": "2026-08-14T14:06:01.649Z",
+          "equity": 1.965308781701912
+        },
+        {
+          "t": "2026-08-14T14:08:01.778Z",
+          "equity": 1.965308781701912
+        },
+        {
+          "t": "2026-08-14T14:10:01.408Z",
           "equity": 1.965308781701912
         }
       ],
