@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T15:56:02.829Z",
+  "updatedAt": "2026-08-14T15:58:02.165Z",
   "startingCash": 2,
   "deathEquity": 0.2,
   "symbols": [
@@ -19,12 +19,12 @@
       "id": "hyper-momentum",
       "name": "Hyper Momentum g1",
       "gen": 1,
-      "equity": 2.0105684531451855,
-      "pnl": 0.010568453145185508,
-      "pnlPct": 0.5284226572592754,
-      "cash": 0.9552002866588368,
+      "equity": 2.001650322880154,
+      "pnl": 0.001650322880153876,
+      "pnlPct": 0.0825161440076938,
+      "cash": 0.95519197628816,
       "realizedPnL": -0.024704538556160838,
-      "fundingPaid": 0.00009517478500237407,
+      "fundingPaid": 0.00010348515567916681,
       "deaths": 0,
       "openCount": 1,
       "tradeCount": 3,
@@ -33,11 +33,11 @@
         "winRate": 0,
         "expectancy": -0.024704538556160838,
         "profitFactor": 0,
-        "totalReturnPct": 0.5284226572592754,
+        "totalReturnPct": 0.0825161440076938,
         "maxDrawdownPct": 2.9429706107120204,
-        "sharpe": 9.270559662297076,
-        "sortino": 7.9024139859094795,
-        "days": 0.08276842592592593
+        "sharpe": 5.319823747603461,
+        "sortino": 4.849748911791808,
+        "days": 0.08415018518518519
       },
       "status": "FAILING",
       "closedTrades": 1,
@@ -50,9 +50,9 @@
           "side": "long",
           "leverage": 20,
           "entry": 62852,
-          "mark": 63026,
-          "uPnl": 0.05536816648634889,
-          "roi": 5.536816648634889,
+          "mark": 62998,
+          "uPnl": 0.046458346591993896,
+          "roi": 4.64583465919939,
           "liq": 60023.659999999996
         }
       ],
@@ -307,6 +307,10 @@
         {
           "t": "2026-08-14T15:56:01.970Z",
           "equity": 2.0105684531451855
+        },
+        {
+          "t": "2026-08-14T15:58:01.354Z",
+          "equity": 2.001650322880154
         }
       ],
       "lineage": []
@@ -333,7 +337,7 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.08276842592592593
+        "days": 0.08415018518518519
       },
       "status": "INCUBATING",
       "closedTrades": 0,
@@ -558,6 +562,10 @@
         {
           "t": "2026-08-14T15:56:01.970Z",
           "equity": 2
+        },
+        {
+          "t": "2026-08-14T15:58:01.354Z",
+          "equity": 2
         }
       ],
       "lineage": []
@@ -566,43 +574,32 @@
       "id": "volatility-breakout",
       "name": "Volatility Breakout g1",
       "gen": 1,
-      "equity": 1.9090877028094555,
-      "pnl": -0.0909122971905445,
-      "pnlPct": -4.545614859527225,
-      "cash": 0.9090877028094555,
-      "realizedPnL": -0.05089558831175116,
-      "fundingPaid": 0.00001670887879319804,
+      "equity": 1.890198636159691,
+      "pnl": -0.10980136384030903,
+      "pnlPct": -5.4900681920154515,
+      "cash": 1.890198636159691,
+      "realizedPnL": -0.06977636767264983,
+      "fundingPaid": 0.0000249961676589924,
       "deaths": 0,
-      "openCount": 1,
-      "tradeCount": 7,
+      "openCount": 0,
+      "tradeCount": 8,
       "metrics": {
-        "closedTrades": 3,
-        "winRate": 33.33333333333333,
-        "expectancy": -0.016965196103917054,
-        "profitFactor": 0.10852746749885382,
-        "totalReturnPct": -4.545614859527225,
-        "maxDrawdownPct": 4.545614859527225,
-        "sharpe": -45.50129851117082,
-        "sortino": -29.96779063276871,
-        "days": 0.08276842592592593
+        "closedTrades": 4,
+        "winRate": 25,
+        "expectancy": -0.017444091918162458,
+        "profitFactor": 0.08155604269052781,
+        "totalReturnPct": -5.4900681920154515,
+        "maxDrawdownPct": 5.4900681920154515,
+        "sharpe": -51.74047181786004,
+        "sortino": -37.61122343478298,
+        "days": 0.08415018518518519
       },
       "status": "FAILING",
-      "closedTrades": 3,
-      "winRate": 33.33333333333333,
+      "closedTrades": 4,
+      "winRate": 25,
       "leverage": 20,
       "stopLossPct": null,
-      "positions": [
-        {
-          "symbol": "BTC",
-          "side": "long",
-          "leverage": 20,
-          "entry": 63026,
-          "mark": 63026,
-          "uPnl": 0,
-          "roi": 0,
-          "liq": 60189.829999999994
-        }
-      ],
+      "positions": [],
       "trades": [
         {
           "ts": "2026-08-14T14:10:01.395Z",
@@ -680,6 +677,17 @@
           "notional": 20,
           "fee": 0.01,
           "coinQty": 0.0003173293561387364
+        },
+        {
+          "ts": "2026-08-14T15:58:01.338Z",
+          "action": "CLOSE",
+          "reason": "signal",
+          "side": "long",
+          "symbol": "BTC",
+          "entry": 63026,
+          "exit": 62998,
+          "pnl": -0.018880779360898672,
+          "roi": -1.8880779360898672
         }
       ],
       "equityHistory": [
@@ -898,6 +906,10 @@
         {
           "t": "2026-08-14T15:56:01.970Z",
           "equity": 1.9090877028094555
+        },
+        {
+          "t": "2026-08-14T15:58:01.354Z",
+          "equity": 1.890198636159691
         }
       ],
       "lineage": []
@@ -906,12 +918,12 @@
       "id": "turbo-ema-scalp",
       "name": "Turbo EMA Scalp g1",
       "gen": 1,
-      "equity": 1.8814289674090925,
-      "pnl": -0.11857103259090751,
-      "pnlPct": -5.9285516295453755,
-      "cash": 0.7851340882559772,
+      "equity": 1.872492638038871,
+      "pnl": -0.1275073619611291,
+      "pnlPct": -6.375368098056455,
+      "cash": 0.7851257609264418,
       "realizedPnL": -0.15504561724508176,
-      "fundingPaid": -0.0001797055010590872,
+      "fundingPaid": -0.00017137817152369761,
       "deaths": 0,
       "openCount": 1,
       "tradeCount": 11,
@@ -920,11 +932,11 @@
         "winRate": 0,
         "expectancy": -0.03100912344901635,
         "profitFactor": 0,
-        "totalReturnPct": -5.9285516295453755,
+        "totalReturnPct": -6.375368098056455,
         "maxDrawdownPct": 10.700992981126506,
-        "sharpe": -23.228409150525962,
-        "sortino": -33.76393788854384,
-        "days": 0.08276842592592593
+        "sharpe": -24.981854589773917,
+        "sortino": -36.59075201744949,
+        "days": 0.08415018518518519
       },
       "status": "FAILING",
       "closedTrades": 5,
@@ -937,9 +949,9 @@
           "side": "long",
           "leverage": 20,
           "entry": 62724,
-          "mark": 63026,
-          "uPnl": 0.09629487915311523,
-          "roi": 9.629487915311524,
+          "mark": 62998,
+          "uPnl": 0.08736687711242905,
+          "roi": 8.736687711242904,
           "liq": 59901.42
         }
       ],
@@ -1282,6 +1294,10 @@
         {
           "t": "2026-08-14T15:56:01.970Z",
           "equity": 1.8814289674090925
+        },
+        {
+          "t": "2026-08-14T15:58:01.354Z",
+          "equity": 1.872492638038871
         }
       ],
       "lineage": []
