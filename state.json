@@ -1,0 +1,159 @@
+{
+  "updatedAt": "2026-08-14T13:15:09.608Z",
+  "leverage": 20,
+  "startingCash": 2,
+  "marginPerTrade": 1,
+  "feeRate": 0.0005,
+  "symbols": [
+    "BTC"
+  ],
+  "promotion": {
+    "minClosedTrades": 30,
+    "minDays": 7,
+    "minProfitFactor": 1.15,
+    "maxDrawdownPct": 40,
+    "minSharpe": 1,
+    "note": "Higher drawdown tolerance (40%) since these are deliberately high-variance."
+  },
+  "learning": {
+    "enabled": false
+  },
+  "strategies": [
+    {
+      "id": "hyper-momentum",
+      "name": "Hyper Momentum 20x",
+      "equity": 2,
+      "pnl": 0,
+      "pnlPct": 0,
+      "cash": 2,
+      "realizedPnL": 0,
+      "openCount": 0,
+      "tradeCount": 0,
+      "riskMult": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": 0,
+        "maxDrawdownPct": 0,
+        "sharpe": null,
+        "sortino": null,
+        "days": 0
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "positions": [],
+      "trades": [],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:15:09.604Z",
+          "equity": 2
+        }
+      ]
+    },
+    {
+      "id": "spike-fade",
+      "name": "Spike Fade 20x",
+      "equity": 2,
+      "pnl": 0,
+      "pnlPct": 0,
+      "cash": 2,
+      "realizedPnL": 0,
+      "openCount": 0,
+      "tradeCount": 0,
+      "riskMult": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": 0,
+        "maxDrawdownPct": 0,
+        "sharpe": null,
+        "sortino": null,
+        "days": 0
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "positions": [],
+      "trades": [],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:15:09.604Z",
+          "equity": 2
+        }
+      ]
+    },
+    {
+      "id": "turbo-ema-scalp",
+      "name": "Turbo EMA Scalp 20x",
+      "equity": 2,
+      "pnl": 0,
+      "pnlPct": 0,
+      "cash": 2,
+      "realizedPnL": 0,
+      "openCount": 0,
+      "tradeCount": 0,
+      "riskMult": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": 0,
+        "maxDrawdownPct": 0,
+        "sharpe": null,
+        "sortino": null,
+        "days": 0
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "positions": [],
+      "trades": [],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:15:09.604Z",
+          "equity": 2
+        }
+      ]
+    },
+    {
+      "id": "volatility-breakout",
+      "name": "Volatility Breakout 20x",
+      "equity": 2,
+      "pnl": 0,
+      "pnlPct": 0,
+      "cash": 2,
+      "realizedPnL": 0,
+      "openCount": 0,
+      "tradeCount": 0,
+      "riskMult": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": 0,
+        "maxDrawdownPct": 0,
+        "sharpe": null,
+        "sortino": null,
+        "days": 0
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "positions": [],
+      "trades": [],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:15:09.604Z",
+          "equity": 2
+        }
+      ]
+    }
+  ]
+}
