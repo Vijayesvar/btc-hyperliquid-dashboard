@@ -1,9 +1,7 @@
 {
-  "updatedAt": "2026-08-14T13:46:02.856Z",
-  "leverage": 20,
+  "updatedAt": "2026-08-14T13:55:15.414Z",
   "startingCash": 2,
-  "marginPerTrade": 1,
-  "feeRate": 0.0005,
+  "deathEquity": 0.2,
   "symbols": [
     "BTC"
   ],
@@ -15,67 +13,21 @@
     "minSharpe": 1,
     "note": "Higher drawdown tolerance (40%) since these are deliberately high-variance."
   },
-  "learning": {
-    "enabled": false
-  },
+  "mode": "brutal+evolution",
   "strategies": [
     {
-      "id": "hyper-momentum",
-      "name": "Hyper Momentum 20x",
-      "equity": 2,
-      "pnl": 0,
-      "pnlPct": 0,
-      "cash": 2,
-      "realizedPnL": 0,
-      "openCount": 0,
-      "tradeCount": 0,
-      "riskMult": 1,
-      "metrics": {
-        "closedTrades": 0,
-        "winRate": null,
-        "expectancy": null,
-        "profitFactor": null,
-        "totalReturnPct": 0,
-        "maxDrawdownPct": 0,
-        "sharpe": null,
-        "sortino": null,
-        "days": 0.021449618055555557
-      },
-      "status": "INCUBATING",
-      "closedTrades": 0,
-      "winRate": null,
-      "positions": [],
-      "trades": [],
-      "equityHistory": [
-        {
-          "t": "2026-08-14T13:15:09.604Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:42:09.937Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:45:00.883Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:46:02.851Z",
-          "equity": 2
-        }
-      ]
-    },
-    {
       "id": "spike-fade",
-      "name": "Spike Fade 20x",
+      "name": "Spike Fade g1",
+      "gen": 1,
       "equity": 2,
       "pnl": 0,
       "pnlPct": 0,
       "cash": 2,
       "realizedPnL": 0,
+      "fundingPaid": 0,
+      "deaths": 0,
       "openCount": 0,
       "tradeCount": 0,
-      "riskMult": 1,
       "metrics": {
         "closedTrades": 0,
         "winRate": null,
@@ -85,89 +37,36 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.021449618055555557
+        "days": 0
       },
       "status": "INCUBATING",
       "closedTrades": 0,
       "winRate": null,
+      "leverage": 20,
+      "stopLossPct": null,
       "positions": [],
       "trades": [],
       "equityHistory": [
         {
-          "t": "2026-08-14T13:15:09.604Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:42:09.937Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:45:00.883Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:46:02.851Z",
+          "t": "2026-08-14T13:55:14.297Z",
           "equity": 2
         }
-      ]
-    },
-    {
-      "id": "turbo-ema-scalp",
-      "name": "Turbo EMA Scalp 20x",
-      "equity": 2,
-      "pnl": 0,
-      "pnlPct": 0,
-      "cash": 2,
-      "realizedPnL": 0,
-      "openCount": 0,
-      "tradeCount": 0,
-      "riskMult": 1,
-      "metrics": {
-        "closedTrades": 0,
-        "winRate": null,
-        "expectancy": null,
-        "profitFactor": null,
-        "totalReturnPct": 0,
-        "maxDrawdownPct": 0,
-        "sharpe": null,
-        "sortino": null,
-        "days": 0.021449618055555557
-      },
-      "status": "INCUBATING",
-      "closedTrades": 0,
-      "winRate": null,
-      "positions": [],
-      "trades": [],
-      "equityHistory": [
-        {
-          "t": "2026-08-14T13:15:09.604Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:42:09.937Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:45:00.883Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:46:02.851Z",
-          "equity": 2
-        }
-      ]
+      ],
+      "lineage": []
     },
     {
       "id": "volatility-breakout",
-      "name": "Volatility Breakout 20x",
+      "name": "Volatility Breakout g1",
+      "gen": 1,
       "equity": 2,
       "pnl": 0,
       "pnlPct": 0,
       "cash": 2,
       "realizedPnL": 0,
+      "fundingPaid": 0,
+      "deaths": 0,
       "openCount": 0,
       "tradeCount": 0,
-      "riskMult": 1,
       "metrics": {
         "closedTrades": 0,
         "winRate": null,
@@ -177,31 +76,146 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.021449618055555557
+        "days": 0
       },
       "status": "INCUBATING",
       "closedTrades": 0,
       "winRate": null,
+      "leverage": 20,
+      "stopLossPct": null,
       "positions": [],
       "trades": [],
       "equityHistory": [
         {
-          "t": "2026-08-14T13:15:09.604Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:42:09.937Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:45:00.883Z",
-          "equity": 2
-        },
-        {
-          "t": "2026-08-14T13:46:02.851Z",
+          "t": "2026-08-14T13:55:14.297Z",
           "equity": 2
         }
-      ]
+      ],
+      "lineage": []
+    },
+    {
+      "id": "hyper-momentum",
+      "name": "Hyper Momentum g1",
+      "gen": 1,
+      "equity": 1.99,
+      "pnl": -0.010000000000000009,
+      "pnlPct": -0.5000000000000004,
+      "cash": 0.99,
+      "realizedPnL": 0,
+      "fundingPaid": 0,
+      "deaths": 0,
+      "openCount": 1,
+      "tradeCount": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": -0.5000000000000004,
+        "maxDrawdownPct": 0,
+        "sharpe": null,
+        "sortino": null,
+        "days": 0
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "leverage": 20,
+      "stopLossPct": null,
+      "positions": [
+        {
+          "symbol": "BTC",
+          "side": "short",
+          "leverage": 20,
+          "entry": 62590,
+          "mark": 62590,
+          "uPnl": 0,
+          "roi": 0,
+          "liq": 65406.549999999996
+        }
+      ],
+      "trades": [
+        {
+          "ts": "2026-08-14T13:55:14.283Z",
+          "action": "OPEN",
+          "side": "short",
+          "symbol": "BTC",
+          "price": 62590,
+          "margin": 1,
+          "notional": 20,
+          "fee": 0.01,
+          "coinQty": 0.00031953986259785906
+        }
+      ],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:55:14.297Z",
+          "equity": 1.99
+        }
+      ],
+      "lineage": []
+    },
+    {
+      "id": "turbo-ema-scalp",
+      "name": "Turbo EMA Scalp g1",
+      "gen": 1,
+      "equity": 1.99,
+      "pnl": -0.010000000000000009,
+      "pnlPct": -0.5000000000000004,
+      "cash": 0.99,
+      "realizedPnL": 0,
+      "fundingPaid": 0,
+      "deaths": 0,
+      "openCount": 1,
+      "tradeCount": 1,
+      "metrics": {
+        "closedTrades": 0,
+        "winRate": null,
+        "expectancy": null,
+        "profitFactor": null,
+        "totalReturnPct": -0.5000000000000004,
+        "maxDrawdownPct": 0,
+        "sharpe": null,
+        "sortino": null,
+        "days": 0
+      },
+      "status": "INCUBATING",
+      "closedTrades": 0,
+      "winRate": null,
+      "leverage": 20,
+      "stopLossPct": null,
+      "positions": [
+        {
+          "symbol": "BTC",
+          "side": "short",
+          "leverage": 20,
+          "entry": 62590,
+          "mark": 62590,
+          "uPnl": 0,
+          "roi": 0,
+          "liq": 65406.549999999996
+        }
+      ],
+      "trades": [
+        {
+          "ts": "2026-08-14T13:55:14.296Z",
+          "action": "OPEN",
+          "side": "short",
+          "symbol": "BTC",
+          "price": 62590,
+          "margin": 1,
+          "notional": 20,
+          "fee": 0.01,
+          "coinQty": 0.00031953986259785906
+        }
+      ],
+      "equityHistory": [
+        {
+          "t": "2026-08-14T13:55:14.297Z",
+          "equity": 1.99
+        }
+      ],
+      "lineage": []
     }
   ]
 }
