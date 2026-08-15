@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T06:58:01.579Z",
+  "updatedAt": "2026-08-15T07:00:01.448Z",
   "startingCash": 2,
   "deathEquity": 0.2,
   "symbols": [
@@ -37,7 +37,7 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.7091527199074074
+        "days": 0.7105400925925925
       },
       "status": "INCUBATING",
       "closedTrades": 0,
@@ -974,6 +974,10 @@
         {
           "t": "2026-08-15T06:58:01.573Z",
           "equity": 2
+        },
+        {
+          "t": "2026-08-15T07:00:01.442Z",
+          "equity": 2
         }
       ],
       "lineage": []
@@ -998,9 +1002,9 @@
         "profitFactor": 1.0546390587421917,
         "totalReturnPct": -3.309914744780318,
         "maxDrawdownPct": 6.273650177275264,
-        "sharpe": -4.810851843395721,
-        "sortino": -3.7280542498601545,
-        "days": 0.7091527199074074
+        "sharpe": -4.800510549850964,
+        "sortino": -3.7119850505073093,
+        "days": 0.7105400925925925
       },
       "status": "INCUBATING",
       "closedTrades": 7,
@@ -2092,6 +2096,10 @@
         {
           "t": "2026-08-15T06:58:01.573Z",
           "equity": 1.9338017051043936
+        },
+        {
+          "t": "2026-08-15T07:00:01.442Z",
+          "equity": 1.9338017051043936
         }
       ],
       "lineage": []
@@ -2116,9 +2124,9 @@
         "profitFactor": 0.08554756074059747,
         "totalReturnPct": -8.24046199171271,
         "maxDrawdownPct": 8.24046199171271,
-        "sharpe": -29.54538486607326,
-        "sortino": -14.545014121829,
-        "days": 0.7091527199074074
+        "sharpe": -29.480327302972,
+        "sortino": -14.482320095441807,
+        "days": 0.7105400925925925
       },
       "status": "FAILING",
       "closedTrades": 7,
@@ -3210,6 +3218,10 @@
         {
           "t": "2026-08-15T06:58:01.573Z",
           "equity": 1.8351907601657458
+        },
+        {
+          "t": "2026-08-15T07:00:01.442Z",
+          "equity": 1.8351907601657458
         }
       ],
       "lineage": []
@@ -3218,66 +3230,44 @@
       "id": "turbo-ema-scalp",
       "name": "Turbo EMA Scalp g1",
       "gen": 1,
-      "equity": 1.6946882816271025,
-      "pnl": -0.3053117183728975,
-      "pnlPct": -15.265585918644875,
-      "cash": 0.6946882816271025,
-      "realizedPnL": -0.19770408121518906,
-      "fundingPaid": -0.0023923628422914036,
+      "equity": 1.6746966049604357,
+      "pnl": -0.3253033950395643,
+      "pnlPct": -16.265169751978213,
+      "cash": 0.6746966049604357,
+      "realizedPnL": -0.20770408121518907,
+      "fundingPaid": -0.002400686175624737,
       "deaths": 0,
       "openCount": 1,
-      "tradeCount": 21,
+      "tradeCount": 23,
       "metrics": {
-        "closedTrades": 10,
-        "winRate": 10,
-        "expectancy": -0.019770408121518906,
-        "profitFactor": 0.27271974249543324,
-        "totalReturnPct": -15.265585918644875,
-        "maxDrawdownPct": 15.17077807519389,
-        "sharpe": -15.0200030652477,
-        "sortino": -15.967547731558744,
-        "days": 0.7091527199074074
+        "closedTrades": 11,
+        "winRate": 9.090909090909092,
+        "expectancy": -0.018882189201380826,
+        "profitFactor": 0.26304334968073734,
+        "totalReturnPct": -16.265169751978213,
+        "maxDrawdownPct": 16.171480325272235,
+        "sharpe": -16.081988918725028,
+        "sortino": -17.144365742883522,
+        "days": 0.7105400925925925
       },
       "status": "FAILING",
-      "closedTrades": 10,
-      "winRate": 10,
+      "closedTrades": 11,
+      "winRate": 9.090909090909092,
       "leverage": 20,
       "stopLossPct": null,
       "positions": [
         {
           "symbol": "BTC",
-          "side": "short",
+          "side": "long",
           "leverage": 20,
           "entry": 63090,
           "mark": 63090,
           "uPnl": 0,
           "roi": 0,
-          "liq": 65929.04999999999
+          "liq": 60250.95
         }
       ],
       "trades": [
-        {
-          "ts": "2026-08-14T14:50:01.721Z",
-          "action": "OPEN",
-          "side": "long",
-          "symbol": "BTC",
-          "price": 62722,
-          "margin": 1,
-          "notional": 20,
-          "fee": 0.01,
-          "coinQty": 0.0003188673830553873
-        },
-        {
-          "ts": "2026-08-14T14:52:01.426Z",
-          "action": "CLOSE",
-          "reason": "signal",
-          "side": "long",
-          "symbol": "BTC",
-          "entry": 62722,
-          "exit": 62654,
-          "pnl": -0.03167214055674245,
-          "roi": -3.167214055674245
-        },
         {
           "ts": "2026-08-14T14:52:01.441Z",
           "action": "OPEN",
@@ -3414,6 +3404,28 @@
           "ts": "2026-08-15T06:58:01.572Z",
           "action": "OPEN",
           "side": "short",
+          "symbol": "BTC",
+          "price": 63090,
+          "margin": 1,
+          "notional": 20,
+          "fee": 0.01,
+          "coinQty": 0.0003170074496750674
+        },
+        {
+          "ts": "2026-08-15T07:00:01.428Z",
+          "action": "CLOSE",
+          "reason": "signal",
+          "side": "short",
+          "symbol": "BTC",
+          "entry": 63090,
+          "exit": 63090,
+          "pnl": -0.01,
+          "roi": -1
+        },
+        {
+          "ts": "2026-08-15T07:00:01.442Z",
+          "action": "OPEN",
+          "side": "long",
           "symbol": "BTC",
           "price": 63090,
           "margin": 1,
@@ -4350,6 +4362,10 @@
         {
           "t": "2026-08-15T06:58:01.573Z",
           "equity": 1.6946882816271025
+        },
+        {
+          "t": "2026-08-15T07:00:01.442Z",
+          "equity": 1.6746966049604357
         }
       ],
       "lineage": []
