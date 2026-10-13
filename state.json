@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T16:44:00.837Z",
+  "updatedAt": "2026-10-13T16:46:01.290Z",
   "startingCash": 2,
   "deathEquity": 0.2,
   "symbols": [
@@ -19,37 +19,64 @@
       "id": "turbo-ema-scalp",
       "name": "Turbo EMA Scalp g4",
       "gen": 4,
-      "equity": 2,
-      "pnl": 0,
-      "pnlPct": 0,
-      "cash": 2,
+      "equity": 1.996928,
+      "pnl": -0.0030719999999999636,
+      "pnlPct": -0.15359999999999818,
+      "cash": 1.484928,
       "realizedPnL": 0,
       "fundingPaid": 0,
       "deaths": 3,
-      "openCount": 0,
-      "tradeCount": 0,
+      "openCount": 1,
+      "tradeCount": 1,
       "metrics": {
         "closedTrades": 0,
         "winRate": null,
         "expectancy": null,
         "profitFactor": null,
-        "totalReturnPct": 0,
-        "maxDrawdownPct": 0,
+        "totalReturnPct": -0.15359999999999818,
+        "maxDrawdownPct": 0.15359999999999818,
         "sharpe": null,
         "sortino": null,
-        "days": 0
+        "days": 0.0013941087962962963
       },
       "status": "INCUBATING",
       "closedTrades": 0,
       "winRate": null,
       "leverage": 12,
       "stopLossPct": null,
-      "positions": [],
-      "trades": [],
+      "positions": [
+        {
+          "symbol": "BTC",
+          "side": "long",
+          "leverage": 12,
+          "entry": 83439,
+          "mark": 83439,
+          "uPnl": 0,
+          "roi": 0,
+          "liq": 76902.94499999999
+        }
+      ],
+      "trades": [
+        {
+          "ts": "2026-10-13T16:46:01.268Z",
+          "action": "OPEN",
+          "side": "long",
+          "symbol": "BTC",
+          "price": 83439,
+          "margin": 0.512,
+          "notional": 6.144,
+          "fee": 0.003072,
+          "coinQty": 0.00007363463128752741
+        }
+      ],
       "equityHistory": [
         {
           "t": "2026-10-13T16:44:00.831Z",
           "equity": 2
+        },
+        {
+          "t": "2026-10-13T16:46:01.282Z",
+          "equity": 1.996928
         }
       ],
       "lineage": [
@@ -116,7 +143,7 @@
         "maxDrawdownPct": 4.624733317486649,
         "sharpe": -22.53967359676349,
         "sortino": -9.511043298024124,
-        "days": 0.9805509375
+        "days": 0.9805586226851852
       },
       "status": "FAILING",
       "closedTrades": 68,
@@ -292,10 +319,6 @@
         }
       ],
       "equityHistory": [
-        {
-          "t": "2026-10-12T17:12:01.230Z",
-          "equity": 1.4187164937149277
-        },
         {
           "t": "2026-10-12T17:14:01.017Z",
           "equity": 1.4187164937149277
@@ -1891,6 +1914,10 @@
         {
           "t": "2026-10-13T16:44:00.831Z",
           "equity": 1.353104639349415
+        },
+        {
+          "t": "2026-10-13T16:46:01.282Z",
+          "equity": 1.353104639349415
         }
       ],
       "lineage": [
@@ -1942,7 +1969,7 @@
         "maxDrawdownPct": 6.427803087118579,
         "sharpe": -8.571868300473987,
         "sortino": -2.8024496106077628,
-        "days": 0.9805509375
+        "days": 0.9805586226851852
       },
       "status": "FAILING",
       "closedTrades": 89,
@@ -2118,10 +2145,6 @@
         }
       ],
       "equityHistory": [
-        {
-          "t": "2026-10-12T17:12:01.230Z",
-          "equity": 1.212736717957978
-        },
         {
           "t": "2026-10-12T17:14:01.017Z",
           "equity": 1.212736717957978
@@ -3717,6 +3740,10 @@
         {
           "t": "2026-10-13T16:44:00.831Z",
           "equity": 1.1647879131238765
+        },
+        {
+          "t": "2026-10-13T16:46:01.282Z",
+          "equity": 1.1647879131238765
         }
       ],
       "lineage": [
@@ -3758,7 +3785,7 @@
         "maxDrawdownPct": 7.299765072708701,
         "sharpe": -5.514745042808605,
         "sortino": -4.221260697907407,
-        "days": 0.9805509375
+        "days": 0.9805586226851852
       },
       "status": "FAILING",
       "closedTrades": 154,
@@ -3934,10 +3961,6 @@
         }
       ],
       "equityHistory": [
-        {
-          "t": "2026-10-12T17:12:01.230Z",
-          "equity": 0.30994118902841383
-        },
         {
           "t": "2026-10-12T17:14:01.017Z",
           "equity": 0.30994118902841383
@@ -5532,6 +5555,10 @@
         },
         {
           "t": "2026-10-13T16:44:00.831Z",
+          "equity": 0.2976699788151065
+        },
+        {
+          "t": "2026-10-13T16:46:01.282Z",
           "equity": 0.2976699788151065
         }
       ],
