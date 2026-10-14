@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T09:06:01.514Z",
+  "updatedAt": "2026-10-14T09:08:01.559Z",
   "startingCash": 2,
   "deathEquity": 0.2,
   "symbols": [
@@ -19,66 +19,44 @@
       "id": "turbo-ema-scalp",
       "name": "Turbo EMA Scalp g4",
       "gen": 4,
-      "equity": 1.8566637076517538,
-      "pnl": -0.14333629234824619,
-      "pnlPct": -7.166814617412309,
-      "cash": 1.3446637076517538,
-      "realizedPnL": -0.11630630287541512,
-      "fundingPaid": -0.0006180105271696699,
+      "equity": 1.8487511188046821,
+      "pnl": -0.15124888119531787,
+      "pnlPct": -7.562444059765894,
+      "cash": 1.3367511188046821,
+      "realizedPnL": -0.12114433292789911,
+      "fundingPaid": -0.0006154517325819928,
       "deaths": 3,
       "openCount": 1,
-      "tradeCount": 17,
+      "tradeCount": 19,
       "metrics": {
-        "closedTrades": 8,
+        "closedTrades": 9,
         "winRate": 0,
-        "expectancy": -0.01453828785942689,
+        "expectancy": -0.013460481436433235,
         "profitFactor": 0,
-        "totalReturnPct": -7.166814617412309,
-        "maxDrawdownPct": 8.060629170687022,
-        "sharpe": -24.29018411104303,
-        "sortino": -27.815432418997474,
-        "days": 0.6819522569444444
+        "totalReturnPct": -7.562444059765894,
+        "maxDrawdownPct": 8.452449421835736,
+        "sharpe": -25.487546885398775,
+        "sortino": -29.23252408620627,
+        "days": 0.6833416319444444
       },
       "status": "FAILING",
-      "closedTrades": 8,
+      "closedTrades": 9,
       "winRate": 0,
       "leverage": 12,
       "stopLossPct": null,
       "positions": [
         {
           "symbol": "BTC",
-          "side": "long",
+          "side": "short",
           "leverage": 12,
-          "entry": 83454,
-          "mark": 83454,
+          "entry": 83430,
+          "mark": 83430,
           "uPnl": 0,
           "roi": 0,
-          "liq": 76916.77
+          "liq": 89965.35
         }
       ],
       "trades": [
-        {
-          "ts": "2026-10-13T16:54:01.125Z",
-          "action": "OPEN",
-          "side": "short",
-          "symbol": "BTC",
-          "price": 83381,
-          "margin": 0.512,
-          "notional": 6.144,
-          "fee": 0.003072,
-          "coinQty": 0.00007368585169283171
-        },
-        {
-          "ts": "2026-10-14T04:05:16.483Z",
-          "action": "CLOSE",
-          "reason": "signal",
-          "side": "short",
-          "symbol": "BTC",
-          "entry": 83381,
-          "exit": 83643,
-          "pnl": -0.02238734599009367,
-          "roi": -4.37252851369017
-        },
         {
           "ts": "2026-10-14T04:05:16.679Z",
           "action": "OPEN",
@@ -221,6 +199,28 @@
           "notional": 6.144,
           "fee": 0.003072,
           "coinQty": 0.00007362139621827594
+        },
+        {
+          "ts": "2026-10-14T09:08:01.483Z",
+          "action": "CLOSE",
+          "reason": "signal",
+          "side": "long",
+          "symbol": "BTC",
+          "entry": 83454,
+          "exit": 83430,
+          "pnl": -0.004838030052484003,
+          "roi": -0.944927744625782
+        },
+        {
+          "ts": "2026-10-14T09:08:01.547Z",
+          "action": "OPEN",
+          "side": "short",
+          "symbol": "BTC",
+          "price": 83430,
+          "margin": 0.512,
+          "notional": 6.144,
+          "fee": 0.003072,
+          "coinQty": 0.0000736425746134484
         }
       ],
       "equityHistory": [
@@ -1235,6 +1235,10 @@
         {
           "t": "2026-10-14T09:06:01.506Z",
           "equity": 1.8566637076517538
+        },
+        {
+          "t": "2026-10-14T09:08:01.548Z",
+          "equity": 1.8487511188046821
         }
       ],
       "lineage": [
@@ -1301,7 +1305,7 @@
         "maxDrawdownPct": 3.313422535368208,
         "sharpe": -12.358501455772156,
         "sortino": -2.064367080795533,
-        "days": 0.9125047569444444
+        "days": 0.9124997569444444
       },
       "status": "FAILING",
       "closedTrades": 70,
@@ -1477,10 +1481,6 @@
         }
       ],
       "equityHistory": [
-        {
-          "t": "2026-10-13T11:12:01.095Z",
-          "equity": 1.353104639349415
-        },
         {
           "t": "2026-10-13T11:14:01.569Z",
           "equity": 1.353104639349415
@@ -3076,6 +3076,10 @@
         {
           "t": "2026-10-14T09:06:01.506Z",
           "equity": 1.3126038486799327
+        },
+        {
+          "t": "2026-10-14T09:08:01.548Z",
+          "equity": 1.3126038486799327
         }
       ],
       "lineage": [
@@ -3127,7 +3131,7 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.9125047569444444
+        "days": 0.9124997569444444
       },
       "status": "FAILING",
       "closedTrades": 89,
@@ -3304,10 +3308,6 @@
       ],
       "equityHistory": [
         {
-          "t": "2026-10-13T11:12:01.095Z",
-          "equity": 1.1647879131238765
-        },
-        {
           "t": "2026-10-13T11:14:01.569Z",
           "equity": 1.1647879131238765
         },
@@ -4902,6 +4902,10 @@
         {
           "t": "2026-10-14T09:06:01.506Z",
           "equity": 1.1647879131238765
+        },
+        {
+          "t": "2026-10-14T09:08:01.548Z",
+          "equity": 1.1647879131238765
         }
       ],
       "lineage": [
@@ -4943,7 +4947,7 @@
         "maxDrawdownPct": 0,
         "sharpe": null,
         "sortino": null,
-        "days": 0.9125047569444444
+        "days": 0.9124997569444444
       },
       "status": "FAILING",
       "closedTrades": 154,
@@ -5120,10 +5124,6 @@
       ],
       "equityHistory": [
         {
-          "t": "2026-10-13T11:12:01.095Z",
-          "equity": 0.2976699788151065
-        },
-        {
           "t": "2026-10-13T11:14:01.569Z",
           "equity": 0.2976699788151065
         },
@@ -6717,6 +6717,10 @@
         },
         {
           "t": "2026-10-14T09:06:01.506Z",
+          "equity": 0.2976699788151065
+        },
+        {
+          "t": "2026-10-14T09:08:01.548Z",
           "equity": 0.2976699788151065
         }
       ],
